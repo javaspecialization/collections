@@ -30,4 +30,9 @@ This repository is a Java/Gradle project.
 - List acceptance criteria that are specific and testable.
 - Reference relevant files and methods when applicable.
 
+## Jira MCP prerequisite
+- Jira-based implementation flows require Atlassian MCP authentication in the local IDE/user environment.
+- If Jira access is unavailable, provide ticket details directly in the task payload and do not guess missing requirements.
+- Setup reference: `.github/instructions/atlassian-mcp-setup.md`.
+
 
