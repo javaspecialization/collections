@@ -1,6 +1,16 @@
-Create a new ticket in Jira in column TODO.
+---
+name: create-jira-ticket
+description: Create a new ticket in Jira in column TODO.
+---
 
-Description: implement a custom LinkedList based on the interface description #file:List.java
+/create-jira-ticket
+
+**Purpose:** Create a jira ticket for implementing a custom LinkedList based on the interface description in List.java.
+
+**Instructions:**
+- Create a new ticket in Jira in column TODO.
+- Set Description: implement a custom LinkedList based on the interface description #file:List.java
+- include acceptance criteria as listed below.
 
 Acceptance Criteria:
 - Listed methods are implemented according to java doc.
