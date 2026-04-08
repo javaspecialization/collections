@@ -109,4 +109,13 @@ public class LinkedList<E> implements List<E> {
     public boolean isEmpty() {
         throw new UnsupportedOperationException();
     }
+
+    /**
+     * Returns the number of elements in this list.
+     *
+     * @return the number of elements in this list
+     */
+    public int size() {
+        return 0;
+    }
 }
