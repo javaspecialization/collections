@@ -24,3 +24,10 @@ This repository is a Java/Gradle project.
 - When asked for focused updates, return only changed code blocks.
 - Keep explanations short and actionable.
 
+## When creating Jira tickets
+- Ticket name start with prefix "JSL-"
+- Include a clear description of the task.
+- List acceptance criteria that are specific and testable.
+- Reference relevant files and methods when applicable.
+
+
