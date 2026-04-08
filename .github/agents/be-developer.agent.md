@@ -12,9 +12,12 @@ Given a Jira ticket key or id, fetch the ticket, implement the requested change 
 
 ## External prerequisite
 
-- This agent is intended to run in an environment where Atlassian MCP Jira read access is available.
-- When that access is present, use it to resolve the site and fetch the Jira ticket before making any code changes.
-- If Atlassian MCP access is not available in the current run, ask for the Jira ticket content or a pasted summary instead of guessing.
+- Custom agent tool metadata in this repository currently supports local workspace tools only.
+- Jira context must therefore be supplied to this agent in one of these ways:
+  - a top-level prompt or caller fetches the Jira ticket first and delegates the implementation task with the fetched payload,
+  - the caller fetches the Jira ticket first and includes the relevant details in the task, or
+  - the runtime injects Jira access outside of the agent front matter.
+- If neither is true, do not guess the requirements. Ask for the Jira ticket content or a pasted summary.
 
 ## Tool usage
 - If you require any tools besides the ones listed in the "tools" section, ask the user to perform the required action and provide you with the result. For example, if you need to create a branch, ask the user to allow using new tool.
@@ -30,8 +33,9 @@ Given a Jira ticket key or id, fetch the ticket, implement the requested change 
 ## Required workflow
 
 1. Fetch Jira context.
-   - If Atlassian MCP Jira access is available, resolve the Atlassian cloud/site and fetch the provided Jira ticket before editing code.
-   - If Jira access is unavailable, request the ticket text from the user instead of inferring requirements.
+   - Prefer having the caller provide the Jira key, title, description, acceptance criteria, and any relevant comments in the task payload.
+   - If direct Jira access is injected by the runtime, use it to verify the task details before editing code.
+   - If Jira context is unavailable, request the ticket text from the user instead of inferring requirements.
    - Use the Jira key as the work item identifier throughout the task.
 
 2. Prepare the local branch.
@@ -84,6 +88,7 @@ Given a Jira ticket key or id, fetch the ticket, implement the requested change 
 Before you finish, ensure all of the following are true:
 
 - Jira ticket was fetched and used as the source of truth.
+  - If the ticket was provided by the caller instead of fetched directly, treat that provided payload as the source of truth.
 - A branch based on the Jira key is checked out.
 - Code changes are implemented locally.
 - Relevant tests or validations were run successfully.
