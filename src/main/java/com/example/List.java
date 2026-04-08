@@ -83,4 +83,11 @@ public interface List<E> {
      * @return {@code true} if this list contains no elements, otherwise {@code false}
      */
     boolean isEmpty();
+
+    /**
+     * Returns the number of elements in this list.
+     *
+     * @return the number of elements in this list
+     */
+    int size();
 }
