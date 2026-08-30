@@ -50,3 +50,15 @@ If verification still fails:
 2. Pass Jira key, summary, description, acceptance criteria, and relevant comments to `be-developer`.
 3. Let `be-developer` create branch, implement, test, and stage changes (no commit).
 
+## Claude Code
+
+The steps above are for JetBrains + Copilot. In Claude Code the Atlassian MCP server is already
+configured; it just needs a per-session sign-in.
+
+1. Run `/mcp`, select `atlassian`, and authenticate (or call `mcp__atlassian__authenticate` and
+   finish with `mcp__atlassian__complete_authentication`). Until then only the two auth tools are
+   exposed — the Jira read tools appear after sign-in.
+2. Verify by fetching any issue you can access.
+3. The `jira` skill (`.claude/skills/jira/`) drives this automatically and falls back to a pasted
+   ticket if sign-in is not possible. Claude Code specifics: `.claude/skills/jira/references/mcp-setup.md`.
+

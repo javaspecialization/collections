@@ -38,3 +38,11 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+### Claude Code ###
+# This repo tracks its Claude Code pipeline assets, overriding the user's global
+# ~/.config/git/ignore rules (.claude/skills/*, .claude/agents/*, .claude/scripts/*, .claude/rules/*).
+!.claude/
+!.claude/**
+# ...except per-user local settings, which stay untracked.
+.claude/settings.local.json
